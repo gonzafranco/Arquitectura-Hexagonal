@@ -6,20 +6,20 @@ namespace _02_Dominio
     {
         private string titulo;
         private string descripcion;
-        private string cuerpo;
+        private DateTime fecha;
         private DateTime fechaDeCreacion;
         private string estado;
 
         public Turno(
              string titulo,
              string descripcion,
-             string cuerpo,
+             DateTime fecha,
              string estado
         )
         {
             this.titulo = titulo;
             this.descripcion = descripcion;
-            this.cuerpo = cuerpo;
+            this.fecha = fecha;
             this.fechaDeCreacion = DateTime.Now;
             this.estado = estado;
         }
