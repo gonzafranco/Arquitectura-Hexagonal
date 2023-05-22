@@ -24,6 +24,10 @@ namespace _02_Dominio.ValueObject
         private void DebeTenerSintaxisValida(String valor)
         {
             string pattern = @"\b(?:ISBN(?:: ?| ))?((?:97[89])?\d{9}[\dx])\b";
+
+           // string pattern = @"^(?:ISBN-13: )?(?:978(?:-?\d){10}|ISBN-10: \d{9}[\dXx])$";
+
+
             var regex = new Regex(pattern);
 
             if (!regex.IsMatch(valor.Replace("-", "")))
