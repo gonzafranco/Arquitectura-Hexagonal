@@ -5,7 +5,7 @@ namespace _02_DomainTests
 {
     public class TituloTest
     {
-        [[Fact]]
+        [Fact]
         public void Constructor_CrearTitulo_NoNulo_CreaInstancia()
         {
             // Arrange
@@ -18,7 +18,7 @@ namespace _02_DomainTests
             Assert.AreEqual(valor, titulo.Valor());
         }
 
-        [[Fact]]
+        [Fact]
         public void Constructor_CrearTitulo_Nulo_LanzaExcepcion()
         {
             // Arrange
@@ -28,7 +28,7 @@ namespace _02_DomainTests
             Assert.Throws<Exception>(() => new Titulo(valor));
         }
 
-        [[Fact]]
+        [Fact]
         public void Constructor_CrearTitulo_Vacio_LanzaExcepcion()
         {
             // Arrange
@@ -38,11 +38,11 @@ namespace _02_DomainTests
             Assert.Throws<Exception>(() => new Titulo(valor));
         }
 
-        [[Fact]]
+        [Fact]
         public void Constructor_CrearTitulo_EspaciosEnBlanco_LanzaExcepcion()
         {
             // Arrange
-            string valor = " ";
+            string valor = "     ";
 
             // Act & Assert
             Assert.Throws<Exception>(() => new Titulo(valor));

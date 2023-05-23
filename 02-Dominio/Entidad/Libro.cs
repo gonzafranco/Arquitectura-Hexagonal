@@ -1,6 +1,7 @@
 ﻿using _02_Dominio.ValueObject;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,15 @@ namespace _02_Dominio.Entidad
 {
     public class Libro
     {
+
         private Identificador id;
         private Titulo titulo;
         private Autor autor;
         private ISBN ISBN;
         private Paginas paginas;
 
+
+    
         public Libro(
                 Guid    id,
                 string  titulo,
@@ -30,10 +34,30 @@ namespace _02_Dominio.Entidad
                 this.paginas = new Paginas(paginas);
             }
         
-       public String idLibro()
+       public Guid idLibro()
         {
-            return this.id.Valor().ToString();
+            return this.id.Valor();
         }
+
+        public String tituloLibro() {
+            return this.titulo.Valor();
+        }
+
+        public String autorLibro()
+        {
+            return this.autor.Valor();
+        }
+
+        public String ISBNLibro()
+        {
+            return this.ISBN.Valor();
+        }
+
+        public int paginasLibro()
+        {
+            return this.paginas.Valor();
+        }
+
 
         public String infoLibro()
         {

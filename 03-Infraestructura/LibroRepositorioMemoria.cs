@@ -36,7 +36,6 @@ namespace _03_Infraestructura
         public void borrar(string id)
         {
 
-            Libro busqueda = this.libros.Find(libro => libro.idLibro() == id);
 
             throw new NotImplementedException();
         }
