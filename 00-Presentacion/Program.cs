@@ -43,9 +43,11 @@ Libro libro3 = new Libro(
 
 //Console.WriteLine(libro1.idLibro());
 
+
+String con = "Host=localhost;Port=5433;Database=Libros;Username=root;Password=root";
+
 LibroRepositorioMemoria libroRepositorio = new LibroRepositorioMemoria();
-PostgresContext context = new PostgresContext();
-LibroRepositorioPostgres libroRepositorioPostgres = new LibroRepositorioPostgres(context);
+LibroRepositorioPostgres libroRepositorioPostgres = new LibroRepositorioPostgres(con);
 
 
 CreadorLibros creadorDeLibros = new CreadorLibros(
@@ -53,6 +55,19 @@ CreadorLibros creadorDeLibros = new CreadorLibros(
 );
 
 creadorDeLibros.ejecutar(libro1);
+
+
+ObtenerLibros obtenedorDeLibros = new ObtenerLibros(
+    libroRepositorioPostgres
+);
+
+List<Libro> todosLosLibros = obtenedorDeLibros.ejecutar();
+
+foreach (Libro libro in todosLosLibros)
+{
+    Console.WriteLine(libro.infoLibro());
+}
+
 
 /*
 CreadorLibros creadorDeLibros = new CreadorLibros(

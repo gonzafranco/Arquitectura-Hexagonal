@@ -1,11 +1,12 @@
 using _02_Dominio.ValueObject;
+using System;
 using Xunit;
 
 namespace _02_DomainTests
 {
     public class PaginasTest
     {
-        [[Fact]]
+        [Fact]
         public void Constructor_CrearPaginasConMasDe10_CreaInstancia()
         {
             // Arrange
@@ -18,7 +19,7 @@ namespace _02_DomainTests
             Assert.AreEqual(valor, paginas.Valor());
         }
 
-        [[Fact]]
+        [Fact]
         public void Constructor_CrearPaginasConMenosDe10_LanzaExcepcion()
         {
             // Arrange

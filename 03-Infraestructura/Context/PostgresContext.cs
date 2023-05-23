@@ -16,7 +16,10 @@ namespace _03_Infraestructura.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Set the PostgreSQL connection string
-            optionsBuilder.UseNpgsql("Host=postgres;Port=5432;Database=Libros;Username=root;Password=root;");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5433;Database=Libros;Username=root;Password=root");
         }
+
+
+
     }
 }

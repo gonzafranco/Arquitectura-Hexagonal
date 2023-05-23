@@ -34,10 +34,30 @@ namespace _02_Dominio.Entidad
                 this.paginas = new Paginas(paginas);
             }
         
-       public String idLibro()
+       public Guid idLibro()
         {
-            return this.id.Valor().ToString();
+            return this.id.Valor();
         }
+
+        public String tituloLibro() {
+            return this.titulo.Valor();
+        }
+
+        public String autorLibro()
+        {
+            return this.autor.Valor();
+        }
+
+        public String ISBNLibro()
+        {
+            return this.ISBN.Valor();
+        }
+
+        public int paginasLibro()
+        {
+            return this.paginas.Valor();
+        }
+
 
         public String infoLibro()
         {

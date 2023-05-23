@@ -14,17 +14,19 @@ namespace _02_DomainTests
             // Act & Assert
             Assert.Throws<Exception>(() => new Autor(valor));
         }
-    }
-    [Fact]
-    public void Constructor_AutorConMasDe4Caracteres_CreaInstancia()
-    {
-        // Arrange
-        string valor = "Gonzalo";
 
-        // Act
-        Autor autor = new Autor(valor);
+        [Fact]
+        public void Constructor_AutorConMasDe4Caracteres_CreaInstancia()
+        {
+            // Arrange
+            string valor = "Gonzalo";
 
-        // Assert
-        Assert.AreEqual(valor, autor.Valor());
+            // Act
+            Autor autor = new Autor(valor);
+
+            // Assert
+            Assert.AreEqual(valor, autor.Valor());
+        }
     }
+  
 }
