@@ -23,11 +23,6 @@ namespace _03_Infraestructura
         }
 
 
-        public void modficar(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public Libro obtenerPorId(string id)
         {
             throw new NotImplementedException();
@@ -40,6 +35,10 @@ namespace _03_Infraestructura
             throw new NotImplementedException();
         }
 
+        public void modificar(Libro t)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     

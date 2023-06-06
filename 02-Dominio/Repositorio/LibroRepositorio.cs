@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _02_Dominio.Repositorio
 {
-    public interface LibroRepositorio : CrudGenerico<Libro>
+    public interface LibroRepositorio : CrudGenerico<Libro,String>
     {
         
     }

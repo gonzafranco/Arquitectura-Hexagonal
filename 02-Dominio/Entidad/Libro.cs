@@ -11,7 +11,7 @@ namespace _02_Dominio.Entidad
     public class Libro
     {
 
-        private Identificador id;
+        private Identificador ID;
         private Titulo titulo;
         private Autor autor;
         private ISBN ISBN;
@@ -20,14 +20,14 @@ namespace _02_Dominio.Entidad
 
     
         public Libro(
-                Guid    id,
+                Guid    ID,
                 string  titulo,
                 string  autor,
                 string  ISBN,
                 int     paginas
             ) 
             {
-                this.id = new Identificador(id);
+                this.ID = new Identificador(ID);
                 this.titulo = new Titulo(titulo);
                 this.autor = new Autor(autor);
                 this.ISBN = new ISBN(ISBN);
@@ -36,7 +36,7 @@ namespace _02_Dominio.Entidad
         
        public Guid idLibro()
         {
-            return this.id.Valor();
+            return this.ID.Valor();
         }
 
         public String tituloLibro() {
@@ -68,7 +68,7 @@ namespace _02_Dominio.Entidad
                 + "\n ISBN:  "
                 + this.ISBN.Valor()
                 + "\n("
-                + this.id.Valor()
+                + this.ID.Valor()
                 + ")";
         }
 
