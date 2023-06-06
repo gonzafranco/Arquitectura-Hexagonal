@@ -1,7 +1,6 @@
 ﻿using _02_Dominio.Entidad;
 using _02_Dominio.Repositorio;
 using _02_Dominio.ValueObject;
-using _03_Infraestructura.Context;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using System;
@@ -15,12 +14,9 @@ namespace _03_Infraestructura
     public class LibroRepositorioPostgres : LibroRepositorio
     {
 
-        private readonly string _connectionString;
+        private string _connectionString = "Host=localhost;Port=5433;Database=Libros;Username=root;Password=root";
 
-        public LibroRepositorioPostgres(string _connectionString)
-        {
-            this._connectionString = _connectionString;
-        }
+       
 
         public void borrar(string id)
         {

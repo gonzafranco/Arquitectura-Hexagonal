@@ -11,16 +11,10 @@ services:
       - POSTGRES_PASSWORD=root
       - POSTGRES_USER=root
       - POSTGRES_DB=Libros
-    # volumes:
-    #   - db-data:/var/lib/postgresql/data
-
-  # app:
-  #   container_name: app_contenedor
-  #   image: node-docker
-  #   depends_on:
-  #     - postgres
-  #   ports:
-  #     - "13000:3000"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data:/var/lib/postgresql/data
+   
 
   pgadmin:
     container_name: pgadmin_postgres_app_contenedor
@@ -34,5 +28,5 @@ services:
     depends_on:
       - postgres
 
-# volumes:
-#   db-data:
+volumes:
+  db_data:
