@@ -23,7 +23,7 @@ namespace _03_Infraestructura
         }
 
 
-        public void modficar(string id)
+        public void modficar(Libro t)
         {
             throw new NotImplementedException();
         }

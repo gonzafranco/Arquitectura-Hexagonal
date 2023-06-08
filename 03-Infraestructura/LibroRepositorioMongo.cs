@@ -87,10 +87,21 @@ namespace _03_Infraestructura
             return libro;
         }
 
-        public void modficar(string id)
+        
+        public void modficar(Libro t)
         {
-            throw new NotImplementedException();
+            var filter = Builders<BsonDocument>.Filter.Eq("ID", t.idLibro().ToString());
+
+            var update = Builders<BsonDocument>.Update
+                .Set("titulo", t.tituloLibro())
+                .Set("autor", t.autorLibro())
+                .Set("paginas", t.paginasLibro())
+                .Set("ISBN", t.ISBNLibro());
+
+            _librosCollection.UpdateOne(filter, update);
         }
+
+      
     }
 }
 

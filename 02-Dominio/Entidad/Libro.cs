@@ -58,6 +58,31 @@ namespace _02_Dominio.Entidad
             return this.paginas.Valor();
         }
 
+        public void cambiarID(Guid ID)
+        {
+            this.ID = new Identificador(ID);
+        }
+
+        public void cambiarTitulo(string titulo)
+        {
+            this.titulo = new Titulo(titulo);
+        }
+
+        public void cambiarAutor(string autor)
+        {
+            this.autor = new Autor(autor);
+        }
+
+        public void cambiarISBN(string ISBN)
+        {
+            this.ISBN = new ISBN(ISBN);
+        }
+
+        public void cambiarPaginas(int paginas)
+        {
+            this.paginas = new Paginas(paginas);
+        }
+
 
         public String infoLibro()
         {

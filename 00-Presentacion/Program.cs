@@ -9,17 +9,6 @@ using MongoDB.Driver;
 using System.Text.RegularExpressions;
 
 
-// ISBN-13 = 9781476793313
-// ISBN-13 = 978-1-4767-9331-3
-// ISBN-10 = 0025045407
-
-
-//id para hacer pruebas a95733a9-bdd2-43b3-bbc0-71f01639c37e
-
-
-
-
-
 Libro libro1 = new Libro(
             Guid.NewGuid(),
             "Jonathan Livingston Seagull",
@@ -32,6 +21,7 @@ Libro libro1 = new Libro(
 LibroRepositorio libroRepositorio =         new LibroRepositorioMemoria();
 LibroRepositorio libroRepositorioPostgres = new LibroRepositorioPostgres();
 LibroRepositorio libroRepositorioMongo =    new LibroRepositorioMongo();
+
 
 
 CreadorLibros creadorDeLibros = new CreadorLibros(
@@ -60,7 +50,7 @@ foreach (Libro libro in todosLosLibros)
     
 }
 
-
+/*
 
 ObtenerLibroPorId obtenedorLibroId = new ObtenerLibroPorId(
     libroRepositorioMongo
@@ -68,32 +58,45 @@ ObtenerLibroPorId obtenedorLibroId = new ObtenerLibroPorId(
 
 Console.WriteLine("Recuperando libro por id...\n");
 
-try {
-    Libro libroid = obtenedorLibroId.ejecutar("fe7d8cb0-f4ab-4176-a318-029bbcea5b35");
-    Console.WriteLine(libroid.infoLibro());
-}catch (Exception ex)
-{
-    Console.WriteLine(ex);
-}
+
+Libro libroid = obtenedorLibroId.ejecutar("9865d346-3d4e-4d5e-a8e6-db9f232e82c8");
+Console.WriteLine(libroid.infoLibro() + "\n");
+
+
+libroid.cambiarTitulo("El principito");
+libroid.cambiarAutor("Antoine de Saint-Exupery");
+libroid.cambiarPaginas(120);
+
+
+ModificarLibro modificadorLibro = new ModificarLibro(
+    libroRepositorioMongo
+    );
 
 
 
 
+ modificadorLibro.ejecutar(libroid);
 
 
 
+*/
+
+
+
+/*
 BorrarLibro borradorLibroId = new BorrarLibro(
     libroRepositorioMongo
     );
 
 try{
     Console.WriteLine("borrando libro por id...\n");
-    borradorLibroId.ejecutar("8d0d991d-2056-440a-a80d-702e19080272");
+    borradorLibroId.ejecutar("8732f3c6-befe-43e9-a880-c81af6330e4d");
 }
 catch(Exception ex)
 {
     Console.WriteLine (ex);
 }
+
 
 
 //"c5bba77b-57f9-4086-8516-7511d58f4351"

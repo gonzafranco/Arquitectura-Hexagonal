@@ -13,7 +13,7 @@ namespace Generico
         public void grabar(T t);
 
         public T obtenerPorId(string id);
-        public void modficar(string id);
+        public void modficar(T t);
         public void borrar(string id);
     }
 }
