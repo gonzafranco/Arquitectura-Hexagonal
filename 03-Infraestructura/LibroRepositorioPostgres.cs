@@ -15,8 +15,6 @@ namespace _03_Infraestructura
 
         private string _connectionString = "Host=localhost;Port=5433;Database=Libros;Username=root;Password=root";
 
-
-
         public void borrar(string id)
         {
             using (var connection = new NpgsqlConnection(_connectionString))
@@ -27,17 +25,14 @@ namespace _03_Infraestructura
                 {
                     command.Connection = connection;
                     command.CommandText = "DELETE FROM Libros WHERE ID = @ID";
+                    command.Parameters.AddWithValue("ID", Guid.Parse(id));
 
-                    using (var reader = command.ExecuteReader())
-                    {
-
-                    }
-
+                    command.ExecuteNonQuery();
                 }
             }
         }
 
-            public void grabar(Libro libro)
+        public void grabar(Libro libro)
             {
                 using (var connection = new NpgsqlConnection(_connectionString))
                 {
@@ -59,42 +54,57 @@ namespace _03_Infraestructura
             }
 
 
-
-            public void modficar(Libro t)
+        public void modficar(Libro libro)
+        {
+            using (var connection = new NpgsqlConnection(_connectionString))
             {
-                throw new NotImplementedException();
-            }
+                connection.Open();
 
-            public Libro obtenerPorId(string id)
-            {
-
-                using (var connection = new NpgsqlConnection(_connectionString))
+                using (var command = new NpgsqlCommand())
                 {
-                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Libros SET Titulo = @Titulo, Autor = @Autor, Paginas = @Paginas, ISBN = @ISBN WHERE ID = @ID";
+                    command.Parameters.AddWithValue("ID", libro.idLibro());
+                    command.Parameters.AddWithValue("Titulo", libro.tituloLibro());
+                    command.Parameters.AddWithValue("Autor", libro.autorLibro());
+                    command.Parameters.AddWithValue("Paginas", libro.paginasLibro());
+                    command.Parameters.AddWithValue("ISBN", libro.ISBNLibro());
 
-                    using (var command = new NpgsqlCommand())
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public Libro obtenerPorId(string id)
+        {
+            using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (var command = new NpgsqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT ID, Titulo, Autor, Paginas, ISBN FROM Libros WHERE ID = @ID";
+                    command.Parameters.AddWithValue("ID", Guid.Parse(id));
+
+                    using (var reader = command.ExecuteReader())
                     {
-                        command.Connection = connection;
-                        command.CommandText = "SELECT ID, Titulo, Autor, Paginas, ISBN FROM Libros WHERE ID = @";
-
-                        using (var reader = command.ExecuteReader())
+                        if (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                var libroId = new Identificador(reader.GetGuid(0));
-
-                                var libro = new Libro(reader.GetGuid(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetInt32(3));
-                                return libro;
-                            }
+                            var libroId = new Identificador(reader.GetGuid(0));
+                            var libro = new Libro(reader.GetGuid(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetInt32(3));
+                            return libro;
                         }
                     }
                 }
-
-                return null;
             }
 
+            return null;
+        }
 
-            public List<Libro> obtenerTodos()
+
+
+        public List<Libro> obtenerTodos()
             {
                 List<Libro> libros = new List<Libro>();
 

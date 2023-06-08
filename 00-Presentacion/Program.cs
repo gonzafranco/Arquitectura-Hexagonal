@@ -23,9 +23,9 @@ LibroRepositorio libroRepositorioPostgres = new LibroRepositorioPostgres();
 LibroRepositorio libroRepositorioMongo =    new LibroRepositorioMongo();
 
 
-
+/*
 CreadorLibros creadorDeLibros = new CreadorLibros(
-    libroRepositorioMongo
+    libroRepositorioPostgres
 );
 
 
@@ -37,7 +37,7 @@ creadorDeLibros.ejecutar(libro1);
 
 
 ObtenerLibros obtenedorDeLibros = new ObtenerLibros(
-    libroRepositorioMongo
+    libroRepositorioPostgres
 );
 
 
@@ -50,16 +50,17 @@ foreach (Libro libro in todosLosLibros)
     
 }
 
-/*
+
+
 
 ObtenerLibroPorId obtenedorLibroId = new ObtenerLibroPorId(
-    libroRepositorioMongo
+    libroRepositorioPostgres
     );
 
 Console.WriteLine("Recuperando libro por id...\n");
 
 
-Libro libroid = obtenedorLibroId.ejecutar("9865d346-3d4e-4d5e-a8e6-db9f232e82c8");
+Libro libroid = obtenedorLibroId.ejecutar("989e9643-57d2-41aa-8877-6967035c66f3");
 Console.WriteLine(libroid.infoLibro() + "\n");
 
 
@@ -69,7 +70,7 @@ libroid.cambiarPaginas(120);
 
 
 ModificarLibro modificadorLibro = new ModificarLibro(
-    libroRepositorioMongo
+    libroRepositorioPostgres
     );
 
 
@@ -79,18 +80,18 @@ ModificarLibro modificadorLibro = new ModificarLibro(
 
 
 
+
 */
 
 
 
-/*
 BorrarLibro borradorLibroId = new BorrarLibro(
-    libroRepositorioMongo
+    libroRepositorioPostgres
     );
 
 try{
     Console.WriteLine("borrando libro por id...\n");
-    borradorLibroId.ejecutar("8732f3c6-befe-43e9-a880-c81af6330e4d");
+    borradorLibroId.ejecutar("989e9643-57d2-41aa-8877-6967035c66f3");
 }
 catch(Exception ex)
 {
