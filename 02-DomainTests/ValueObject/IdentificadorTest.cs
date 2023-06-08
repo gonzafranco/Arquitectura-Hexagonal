@@ -5,7 +5,7 @@ namespace _02_DomainTests
 {
     public class IdentificadorTest
     {
-        [Fact]
+        [Test]
         public void Constructor_CrearIdentificador_GuardaValorCorrectamente()
         {
             // Arrange

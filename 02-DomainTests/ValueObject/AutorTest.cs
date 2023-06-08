@@ -19,7 +19,7 @@ namespace _02_DomainTests
         public void Constructor_AutorConMasDe4Caracteres_CreaInstancia()
         {
             // Arrange
-            string valor = "Gonzalo";
+            string valor = "Franco";
 
             // Act
             Autor autor = new Autor(valor);

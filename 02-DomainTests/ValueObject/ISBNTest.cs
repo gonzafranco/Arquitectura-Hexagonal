@@ -5,7 +5,7 @@ namespace _02_DomainTests
 {
     public class ISBNTest
     {
-        [[Fact]]
+        [Fact]
         public void Constructor_ISBNSintaxisValida_CreaInstancia()
         {
             // Arrange
@@ -18,7 +18,7 @@ namespace _02_DomainTests
             Assert.AreEqual(valor, isbn.Valor());
         }
 
-        [[Fact]]
+        [Fact]
         public void Constructor_ISBNSintaxisInvalida_LanzaExcepcion()
         {
             // Arrange
