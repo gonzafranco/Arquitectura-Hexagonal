@@ -23,13 +23,10 @@ LibroRepositorio libroRepositorioPostgres = new LibroRepositorioPostgres();
 LibroRepositorio libroRepositorioMongo =    new LibroRepositorioMongo();
 
 
-/*
+
 CreadorLibros creadorDeLibros = new CreadorLibros(
-    libroRepositorioPostgres
+    libroRepositorioMongo
 );
-
-
-
 Console.WriteLine("Guardando libro...\n");
 creadorDeLibros.ejecutar(libro1);
 
@@ -37,10 +34,8 @@ creadorDeLibros.ejecutar(libro1);
 
 
 ObtenerLibros obtenedorDeLibros = new ObtenerLibros(
-    libroRepositorioPostgres
+    libroRepositorioMongo
 );
-
-
 List<Libro> todosLosLibros = obtenedorDeLibros.ejecutar();
 
 Console.WriteLine("Recuperando libros...\n");
@@ -54,13 +49,11 @@ foreach (Libro libro in todosLosLibros)
 
 
 ObtenerLibroPorId obtenedorLibroId = new ObtenerLibroPorId(
-    libroRepositorioPostgres
+    libroRepositorioMongo
     );
-
 Console.WriteLine("Recuperando libro por id...\n");
 
-
-Libro libroid = obtenedorLibroId.ejecutar("989e9643-57d2-41aa-8877-6967035c66f3");
+Libro libroid = obtenedorLibroId.ejecutar("b03c5d10-2f20-4064-b185-6b6b8440afab");
 Console.WriteLine(libroid.infoLibro() + "\n");
 
 
@@ -70,52 +63,17 @@ libroid.cambiarPaginas(120);
 
 
 ModificarLibro modificadorLibro = new ModificarLibro(
-    libroRepositorioPostgres
+    libroRepositorioMongo
     );
-
-
-
-
  modificadorLibro.ejecutar(libroid);
 
 
 
-
-*/
-
-
-
 BorrarLibro borradorLibroId = new BorrarLibro(
-    libroRepositorioPostgres
+    libroRepositorioMongo
     );
 
-try{
-    Console.WriteLine("borrando libro por id...\n");
-    borradorLibroId.ejecutar("989e9643-57d2-41aa-8877-6967035c66f3");
-}
-catch(Exception ex)
-{
-    Console.WriteLine (ex);
-}
+Console.WriteLine("borrando libro por id...\n");
+borradorLibroId.ejecutar("5ff6a668-3d26-4c83-991a-08321da5afb9");
 
 
-
-//"c5bba77b-57f9-4086-8516-7511d58f4351"
-/*
-CreadorLibros creadorDeLibros = new CreadorLibros(
-    libroRepositorio
-);
-
-creadorDeLibros.ejecutar(libro1);
-
-ObtenerLibros obtenedorDeLibros = new ObtenerLibros(
-    libroRepositorio
-);
-
-List<Libro> todosLosLibros = obtenedorDeLibros.ejecutar();
-
-foreach (Libro libro in todosLosLibros)
-{
-    Console.WriteLine(libro.infoLibro());
-}
-*/
