@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Aplicacion", "01-Aplicac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-DomainTests", "02-DomainTests\02-DomainTests.csproj", "{4B08FF18-EB41-41DC-85F6-B99FDF5C43AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generico", "Generico\Generico.csproj", "{D5A07C28-5AAF-416E-BA87-11662F5C05ED}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{4B08FF18-EB41-41DC-85F6-B99FDF5C43AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B08FF18-EB41-41DC-85F6-B99FDF5C43AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B08FF18-EB41-41DC-85F6-B99FDF5C43AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5A07C28-5AAF-416E-BA87-11662F5C05ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5A07C28-5AAF-416E-BA87-11662F5C05ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5A07C28-5AAF-416E-BA87-11662F5C05ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5A07C28-5AAF-416E-BA87-11662F5C05ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

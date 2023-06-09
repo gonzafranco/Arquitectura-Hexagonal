@@ -74,6 +74,6 @@ BorrarLibro borradorLibroId = new BorrarLibro(
     );
 
 Console.WriteLine("borrando libro por id...\n");
-borradorLibroId.ejecutar("5ff6a668-3d26-4c83-991a-08321da5afb9");
+borradorLibroId.ejecutar("c2826e0f-3bf4-405e-ac65-45ad1c67d1c1");
 
 
