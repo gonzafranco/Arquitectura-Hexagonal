@@ -1,0 +1,9 @@
+version: '3.1'
+
+services:
+  mongodata:
+    image: mongo:latest
+    volumes:
+      - ./dbMongo:/data/db
+    ports:
+      - 27018:27017

@@ -18,7 +18,6 @@ Libro libro1 = new Libro(
             );
 
 
-LibroRepositorio libroRepositorio =         new LibroRepositorioMemoria();
 LibroRepositorio libroRepositorioPostgres = new LibroRepositorioPostgres();
 LibroRepositorio libroRepositorioMongo =    new LibroRepositorioMongo();
 
@@ -53,13 +52,14 @@ ObtenerLibroPorId obtenedorLibroId = new ObtenerLibroPorId(
     );
 Console.WriteLine("Recuperando libro por id...\n");
 
-Libro libroid = obtenedorLibroId.ejecutar("b03c5d10-2f20-4064-b185-6b6b8440afab");
+Libro libroid = obtenedorLibroId.ejecutar("514ef16a-d6d0-4953-8d4b-a03c0adc4383");
 Console.WriteLine(libroid.infoLibro() + "\n");
 
 
 libroid.cambiarTitulo("El principito");
 libroid.cambiarAutor("Antoine de Saint-Exupery");
 libroid.cambiarPaginas(120);
+
 
 
 ModificarLibro modificadorLibro = new ModificarLibro(
@@ -69,11 +69,12 @@ ModificarLibro modificadorLibro = new ModificarLibro(
 
 
 
+
 BorrarLibro borradorLibroId = new BorrarLibro(
     libroRepositorioMongo
     );
 
 Console.WriteLine("borrando libro por id...\n");
-borradorLibroId.ejecutar("c2826e0f-3bf4-405e-ac65-45ad1c67d1c1");
+borradorLibroId.ejecutar("4a48f5fe-96fa-452b-9c75-f1004ca33a31");
 
 
